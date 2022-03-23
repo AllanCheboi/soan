@@ -70,7 +70,7 @@ def clean_message(row):
     except:
         return row.Message_Raw
     
-def remove_inactive_users(df, min_messages=10):
+def remove_inactive_users(df, min_messages=1):
     """ Removes inactive users or users that have 
     posted very few messages. 
     
@@ -78,7 +78,7 @@ def remove_inactive_users(df, min_messages=10):
     -----------
     df : pandas dataframe
         Dataframe of all messages 
-    min_messages: int, default 10
+    min_messages: int, default 1
         Number of minimum messages that a user must have
         
     Returns:
@@ -93,7 +93,7 @@ def remove_inactive_users(df, min_messages=10):
     df = df[df.User.isin(to_keep)]
     return df
 
-def preprocess_data(df, min_messages=10):
+def preprocess_data(df, min_messages=0):
     """ Preprocesses the data by executing the following steps:
     
     * Import data
