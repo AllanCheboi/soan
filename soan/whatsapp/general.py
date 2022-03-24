@@ -292,7 +292,7 @@ def plot_messages(df, colors=None, trendline=False, savefig=False, dpi=100):
     legend_elements = []
     
     for i, user in enumerate(users):
-        ax.plot(users[user].Date, users[user].Message_Raw, linewidth=3, color=colors[i])
+        ax.plot(users[user].Date, users[user].Message_Raw, linewidth=1, color=colors[i])
         legend_elements.append(Line2D([0], [0], color=colors[i], lw=4, label=user))
 
     # calc the trendline
@@ -313,7 +313,7 @@ def plot_messages(df, colors=None, trendline=False, savefig=False, dpi=100):
     ax.legend(handles=legend_elements, bbox_to_anchor=(0.5, 1), loc=2, borderaxespad=0.)
 
     # Set size of graph
-    fig.set_size_inches(20, 10)
+    fig.set_size_inches(40, 20)
     
     # Creating custom legend
     custom_lines = [Line2D([], [], color=colors[i], lw=4, 
